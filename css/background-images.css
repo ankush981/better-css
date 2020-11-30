@@ -1,0 +1,35 @@
+.image-container {
+    width: 500px;
+    height: 200px;
+    border: 1px solid black;
+}
+
+.image-container.bg-image {
+    background-image: url(/background-images/horse-and-landscape.jpg);
+    background-size: cover;
+}
+
+.bg-image.center {
+    background-position: center;
+}
+
+.image-container-2 {
+    width: 320px;
+    height: 427px;
+    border: 1px solid black;
+    background-color: rgba(255, 0, 0, 0.3);
+}
+
+.image-container-2.bg.blend-multiply {
+    background-image: url(../background-images/horse-and-landscape.jpg);
+    background-blend-mode: multiply;
+}
+
+.image-container-2.bg.blend-multiply.zoom {
+    background-size: 100%;
+    transition: background-size 500ms ease-in-out;
+}
+
+.image-container-2.bg.blend-multiply.zoom:hover {
+    background-size: 110%;
+}

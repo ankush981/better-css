@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Images</title>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Overpass+Mono" />
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/background-images.css">
+</head>
+<body>
+    <div class="content">
+        <!-- Size -->
+        <section class="mb2">
+            <h2 class="mb1">Size</h2>
+            <p class="mb1">Let us begin by creating an empty box (500px by 200px), inside which we will place the background image. We will also give it a black border so that it's visible.</p>
+
+            <div class="image-container mb1"></div>
+
+            <p class="mb1">And here's the image we'll use. Yes, you'll notice that the aspect ratio is way off, and that's the point of this exercise.</p>
+
+            <div class="mb1">
+                <img src="horse-and-landscape.jpg" width="320">
+            </div>
+
+            <p class="mb1">So, let's go ahead and use the size value that everyone is fond of: <code>cover</code>:</p>
+
+            <div class="image-container mb1 bg-image"></div>
+
+            <p class="mb1">Not quite what we were expecting! However, <code>cover</code> did what it was supposed to do: it made sure that the image completey covers the div, no matter how much it has to stretch or shrink to accomplish that.</p>
+
+            <p class="mb1">We can do slightly better (in this case) by setting the position of the image to <code>center</code>:</p>
+
+            <div class="image-container mb1 bg-image center"></div>
+
+        </section>
+
+        <!-- Blend mode -->
+        <section class="mb2">
+            <h2 class="mb1">Blend Mode</h2>
+
+            <p class="mb1">One of the really poorly known but magnificent properties is the blend mode for background images. It allows us to get creative and produce nice effects by "mixing" the background image colors with other backgrounds present.</p>
+
+            <p class="mb1">Let's begin like last time by creating a box, but this time we'll make it proportional to the background image size. Let's also throw in some background color:</p>
+
+            <div class="image-container-2 mb1"></div>
+
+            <p class="mb1">It's time to apply the background image. But along with that, let's do one more thing: add a property <code>background-blend-mode</code> and set its value to <code>multiply</code>.</p>
+
+            <div class="image-container-2 mb1 bg blend-multiply"></div>
+
+            <p class="mb1">Nice, isn't it?! With just two lines of CSS, we were able to create a very cool effect/mood for the background image. :)</p>
+        </section>
+
+        <!-- Translate effect -->
+        <section class="mb2">
+            <h2 class="mb1">Hover effects</h2>
+
+            <p class="mb1">One of the cool effects you can create on a background image is to make it come alive (in some way) on hover. One way you can do this is by adding a translate effect and making the background image bigger on hover (yes, <code>background-size</code> can take values such as 150%.).</p>
+
+            <div class="mb1 image-container-2 bg blend-multiply zoom"></div>
+
+            <div class="mb1">
+                <p><strong>HOWEVER:</strong> For this to work, we have to set the <code>background-size</code> to <code>100%</code>. It has the same effect as <code>cover</code>, but the latter interferes with the transition and makes it jerky.</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
