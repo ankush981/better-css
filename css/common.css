@@ -24,10 +24,17 @@ body {
   color: #222222;
 }
 
-body code {
+body code, 
+body pre 
+{
   font-family: 'Overpass Mono', monospace !important;
   padding: 0.05em 0.2em;
   text-decoration: underline;
+}
+
+body pre {
+  text-decoration: none;
+  white-space: pre-line;
 }
 
 .site-title {

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Overpass+Mono" />
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/css-grid.css">
+</head>
+<body>
+    <div class="content">
+        <!-- Size -->
+        <section class="mb2">
+            <h2 class="mb1">Size values</h2>
+            <p class="mb1"> When we first learn CSS Grid, we come across code such as                  <code>grid-template-columns: repeat(4, 1fr);</code> and we resign ourselves to mystery. But <code>repeat</code> and fractional sizes are not our only recourse.
+            </p>
+
+            <p class="mb1">CSS Grid is not just very powerful but also very friendly. When generating rows, columns, etc., we can use the units and precise values we want, completely ignoring the weird <code>fr</code> thing.</p>
+
+            <p class="mb1">
+                Allow me to lift some code shamelessly from the CSS Tricks folks:
+                <pre>
+                    .container {
+                        &nbsp;&nbsp; grid-template-columns: 40px 50px auto 50px 40px;
+                        &nbsp;&nbsp; grid-template-rows: 25% 100px auto;
+                    }
+                </pre>
+
+                <p class="mt1">This can be visualized as (again, thanks to CSS Tricks):</p>
+                <div class="mb-1">
+                    <img src="./css-grid-takes-many-units.svg" width="350">
+                </div>
+
+                <p class="mb1">As you can see, the units specified for row and column widths here are our regular, everyday units: px, %, auto, etc. The <code>fr</code> stuff is not necessarily needed.</p>
+            </p>
+        </section>
+
+        <section class="mb2">
+            <h2 class="mb1"><code>fr</code> strikes back!</h2>
+
+            <p class="mb1">From the earlier section, one might conclude that <code>fr</code> is just a minor convenience or syntax sugar.</p>
+
+            <p class="mb1">Far from it!</p>
+
+            <p class="mb1">I'll spare you the code, so let's understand the idea conceptually. When we want to define the grid widths manually, there's a chance we might screw up. For instance, something innocent as <code>grid-template-columns: repeat(4, 25%);</code> can produce horizontal scrolling if there are other elements.</p>
+
+            <p class="mb1">However, if we say <code>grid-template-columns: repeat(4, 1fr);</code>, we're leaving it up to CSS Grid to take everything into consideration and just gives us four equal-width columns.</p>
+
+            <p class="mb1">So, yes, in the vast majority of cases, <code>fr;</code> is the correct unit.</p>
+        </section>
+    </div>
+</body>
+</html>
